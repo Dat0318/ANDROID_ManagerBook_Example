@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PracticeApplication</string>
+    <string-array name="students">
+        <item>Meisam</item>
+        <item>Sarash</item>
+        <item>Brad</item>
+        <item>Medline</item>
+        <item>Tom</item>
+        <item>Jerry</item>
+    </string-array>
+    <string name="hello">Hello World</string>
+    <string name="say_hello">Say Hello</string>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
+</resources>

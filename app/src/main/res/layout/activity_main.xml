@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity"
+    tools:ignore="MissingConstraints"
+    android:id="@+id/parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_alarm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPickImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/edtTxtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Meisan"
+        app:layout_constraintStart_toStartOf="@+id/txtWarnName"
+        app:layout_constraintTop_toBottomOf="@+id/txtWarnName" />
+
+    <EditText
+        android:id="@+id/edtTxtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Meisan@gmail.com"
+        app:layout_constraintStart_toStartOf="@+id/txtWarnEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txtWarnEmail" />
+
+    <EditText
+        android:id="@+id/edtTxtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="123456"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/txtWarnPassRepeat"
+        app:layout_constraintTop_toBottomOf="@+id/txtWarnPassRepeat" />
+
+    <EditText
+        android:id="@+id/edtTxtPassRepeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="123456"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/txtWarnPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtWarnPassword" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose a options:"
+        app:layout_constraintStart_toStartOf="@+id/edtTxtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edtTxtPassword" />
+
+    <RadioGroup
+        android:id="@+id/rgGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Single" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="married" />
+
+        <RadioButton
+            android:id="@+id/rbOther"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="in a relationship" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:text="Select a Plaint: "
+        app:layout_constraintStart_toStartOf="@+id/rgGender"
+        app:layout_constraintTop_toBottomOf="@+id/rgGender" />
+
+    <Spinner
+        android:id="@+id/spinnerCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:entries="@array/planets_array"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="256dp"
+        android:width="150dp"
+        android:text="are you confirm with your information?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.878"
+        app:layout_constraintStart_toEndOf="@+id/edtTxtName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/agreementCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Sure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toEndOf="@+id/edtTxtPassRepeat"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rgGender"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/rgGender" />
+
+    <TextView
+        android:id="@+id/txtWarnName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Name"
+        android:textColor="#DA3434"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/txtWarnEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="#DA3434"
+        app:layout_constraintStart_toStartOf="@+id/edtTxtName"
+        app:layout_constraintTop_toBottomOf="@+id/edtTxtName" />
+
+    <TextView
+        android:id="@+id/txtWarnPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textColor="#DA3434"
+        app:layout_constraintStart_toStartOf="@+id/edtTxtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edtTxtEmail" />
+
+    <TextView
+        android:id="@+id/txtWarnPassRepeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Repassword"
+        android:textColor="#DA3434"
+        app:layout_constraintStart_toStartOf="@+id/edtTxtPassRepeat"
+        app:layout_constraintTop_toBottomOf="@+id/edtTxtPassRepeat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    android:orientation="horizontal"-->
+    <!--    tools:context=".MainActivity"-->
+    <!--    android:padding="10dp">-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        android:fontFamily="@font/allura"-->
+    <!--        android:text="Content text to test font"-->
+    <!--        android:textSize="50dp" />-->
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:id="@+id/contactsRecView"/>-->
+    <!--</RelativeLayout>-->
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    android:orientation="horizontal"-->
+    <!--    tools:context=".MainActivity">-->
+
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        android:text="@string/say_hello"-->
+    <!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>-->
+
+    <!--    <com.google.android.material.floatingactionbtnPickImage.FloatingActionButton-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_marginEnd="20dp"-->
+    <!--        android:layout_marginBottom="20dp"-->
+    <!--        android:layout_alignParentRight="true"-->
+    <!--        android:layout_marginRight="20dp"-->
+    <!--        android:src="@drawable/ic_add"-->
+    <!--        android:backgroundTint="@color/design_default_color_primary"-->
+    <!--        app:backgroundTint="#fff"-->
+    <!--        app:rippleColor="#fff"-->
+    <!--        android:id="@+id/fab"/>-->
+
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/btnPickImage"-->
+    <!--        android:text="Show Snakers"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        tools:ignore="MissingConstraints" />-->
+
+    <!--    <com.google.android.material.card.MaterialCardView-->
+    <!--        android:layout_width="150dp"-->
+    <!--        android:layout_height="200dp"-->
+    <!--        android:id="@+id/cardView"-->
+    <!--        tools:ignore="MissingConstraints"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/btnPickImage"-->
+    <!--        app:cardCornerRadius="5dp"-->
+    <!--        app:cardElevation="5dp"-->
+    <!--        >-->
+    <!--        <RelativeLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent">-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_centerHorizontal="true"-->
+    <!--                android:text="Hello"-->
+    <!--                android:textStyle="bold"-->
+    <!--                android:textSize="18sp"-->
+    <!--                android:id="@+id/txtHello"/>-->
+
+    <!--            <ImageView-->
+    <!--                android:layout_width="140dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_below="@+id/txtHello"-->
+    <!--                -->
+    <!--                android:layout_centerHorizontal="true"-->
+    <!--                android:src="@drawable/ic_launcher_background"/>-->
+    <!--        </RelativeLayout>-->
+    <!--    </com.google.android.material.card.MaterialCardView>-->
+
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:orientation="horizontal"-->
+    <!--    tools:context=".MainActivity">-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Hello"-->
+    <!--        tools:ignore="MissingConstraints"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        android:id="@+id/textHello"/>-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/textView"-->
+    <!--        android:layout_marginTop="100dp"-->
+    <!--        android:text="TextView"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/textHello"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/textHello"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textHello"/>-->
+
+    <!--    <include layout="@layout/trademark"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"/>-->
+    <!--    -->
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:orientation="horizontal"-->
+    <!--    tools:context=".MainActivity">-->
+
+    <!--    <Spinner-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:id="@+id/studentsSpinner"-->
+    <!--        android:entries="@array/students"/>-->
+
+    <!--    <ListView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_marginTop="100dp"-->
+    <!--        android:id="@+id/citiesList"-->
+    <!--        android:layout_below="@+id/studentsSpinner"/>-->
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="150dp"-->
+    <!--        android:layout_height="150dp"-->
+    <!--        android:src="@drawable/ic_launcher_background"-->
+    <!--        android:id="@+id/myImage"-->
+    <!--        android:layout_centerInParent="true"/>-->
+    <!--</RelativeLayout>-->
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:orientation="horizontal"-->
+    <!--    tools:context=".MainActivity">-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView"-->
+    <!--        android:layout_width="98dp"-->
+    <!--        android:layout_height="33dp"-->
+    <!--        android:text="TextView"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.715"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.143"-->
+    <!--        tools:text="@tools:sample/date/ddmmyy" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView2"-->
+    <!--        android:layout_width="144dp"-->
+    <!--        android:layout_height="35dp"-->
+    <!--        android:text="TextView"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/textView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/textView"-->
+    <!--        tools:layout_editor_absoluteX="39dp" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btnPickImage"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Button"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/textView"-->
+    <!--        app:layout_constraintHorizontal_bias="0.6"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/textView"-->
+    <!--        tools:layout_editor_absoluteY="161dp" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="350dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/textView"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/textView"-->
+    <!--        tools:srcCompat="@tools:sample/avatars" />-->
+
+    <!--    <androidx.constraintlayout.widget.Guideline-->
+    <!--        android:id="@+id/guideline"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintGuide_begin="205dp" />-->
+
+    <!--    <androidx.constraintlayout.widget.Guideline-->
+    <!--        android:id="@+id/guideline2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintGuide_begin="161dp" />-->
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:orientation="horizontal"-->
+    <!--    tools:context=".MainActivity">-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/txtHello"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_weight="2"-->
+    <!--        android:background="@color/cardview_dark_background"-->
+    <!--        android:text="Hello world" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/txtName"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@color/design_default_color_secondary"-->
+    <!--        android:text="name"-->
+    <!--        android:layout_weight="8"/>-->
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/firstRelLayout"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="100dp">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Name"-->
+    <!--            android:id="@+id/txtName"/>-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:id="@+id/txtLastName"-->
+    <!--            android:text="Last Name"-->
+    <!--            android:layout_toRightOf="@+id/txtName"-->
+    <!--            android:layout_marginLeft="10dp"/>-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Email"-->
+    <!--            android:id="@+id/txtEmail"-->
+    <!--            android:layout_toRightOf="@+id/txtLastName"-->
+    <!--            android:layout_marginLeft="10dp"/>-->
+
+    <!--    </RelativeLayout>-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Hello World"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_below="@+id/firstRelLayout"-->
+    <!--        -->
+    <!--        android:id="@+id/txtHello"/>-->
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Say Hello"-->
+    <!--        android:id="@+id/btnHello"-->
+    <!--        android:layout_below="@+id/txtHello"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="15dp"/>-->
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/moviesRellayout"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="20dp">-->
+
+    <!--        <CheckBox-->
+    <!--            android:id="@+id/checkboxHarry"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:checked="true"-->
+    <!--            android:text="Harry Potter" />-->
+
+    <!--        <CheckBox-->
+    <!--            android:id="@+id/checkboxMattrix"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="15dp"-->
+    <!--            android:layout_toRightOf="@+id/checkboxHarry"-->
+    <!--            android:checked="true"-->
+    <!--            android:text="The Matrix" />-->
+
+    <!--        <CheckBox-->
+    <!--            android:id="@+id/checkboxJoker"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="15dp"-->
+    <!--            android:layout_toRightOf="@+id/checkboxMattrix"-->
+    <!--            android:checked="true"-->
+    <!--            android:text="The Matrix" />-->
+    <!--    </RelativeLayout>-->
+
+    <!--    <RadioGroup-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@+id/moviesRellayout"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:id="@+id/rgMarriedStatus">-->
+    <!--        <RadioButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Married"-->
+    <!--            android:id="@+id/rbMarried"-->
+    <!--            android:checked="true"/>-->
+
+    <!--        <RadioButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Single"-->
+    <!--            android:id="@+id/rbSingle"/>-->
+
+    <!--        <RadioButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:id="@+id/rbRel"-->
+    <!--            android:text="In a Relationship"/>-->
+    <!--    </RadioGroup>-->
+
+    <!--    <ProgressBar-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/progressBar1"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        android:visibility="gone"/>-->
+
+    <!--    <ProgressBar-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/progressBar"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        android:visibility="visible"-->
+    <!--        style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+    <!--        android:progress="30"-->
+    <!--        android:max="100"-->
+    <!--        android:layout_marginLeft="20dp"-->
+    <!--        android:layout_marginRight="20dp"-->
+    <!--        />-->
+
+    <!--</LinearLayout>-->

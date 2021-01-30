@@ -31,8 +31,10 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
 
     private ArrayList<Book> books = new ArrayList<>();
     private Context mContent;
+    private String parentActivity;
 
-    public BookRecViewAdapter(Context mContent) {
+    public BookRecViewAdapter(Context mContent, String parentActivity) {
+        this.parentActivity = parentActivity;
         this.mContent = mContent;
     }
 

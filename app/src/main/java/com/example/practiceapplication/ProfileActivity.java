@@ -53,24 +53,26 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         Intent intent;
         switch (view.getId()) {
             case R.id.btnAllBook:
-                intent = new Intent(ProfileActivity.this, AlreadyReadBookActivity.class);
-                startActivity(intent);
-                break;
-//            case R.id.btnCurrentRead:
-//                intent = new Intent(ProfileActivity.this, AlreadyReadBookActivity.class);
-//                break;
-            case R.id.btnAlreadyBook:
                 intent = new Intent(ProfileActivity.this, SecondActivity.class);
                 startActivity(intent);
                 break;
-//
-//            case R.id.btnWishList:
-//                intent = new Intent(ProfileActivity.this, AlreadyReadBookActivity.class);
-//                break;
-//
-//            case R.id.btnSeeFavorites:
-//                intent = new Intent(ProfileActivity.this, AlreadyReadBookActivity.class);
-//                break;
+            case R.id.btnCurrentRead:
+                intent = new Intent(ProfileActivity.this, CurrentReadBook.class);
+                startActivity(intent);
+                break;
+            case R.id.btnAlreadyBook:
+                intent = new Intent(ProfileActivity.this, AlreadyReadBookActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnWishList:
+                intent = new Intent(ProfileActivity.this, WantToReadActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.btnSeeFavorites:
+                intent = new Intent(ProfileActivity.this, FavoriteBook.class);
+                startActivity(intent);
+                break;
 //
 //            case R.id.btnAbout:
 //                intent = new Intent(ProfileActivity.this, AlreadyReadBookActivity.class);

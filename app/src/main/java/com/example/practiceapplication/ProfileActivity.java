@@ -1,9 +1,12 @@
 package com.example.practiceapplication;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -11,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -73,11 +77,28 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 intent = new Intent(ProfileActivity.this, FavoriteBook.class);
                 startActivity(intent);
                 break;
-//
-//            case R.id.btnAbout:
-//                intent = new Intent(ProfileActivity.this, AlreadyReadBookActivity.class);
-//                startActivity(intent);
-//                break;
+            case R.id.btnAbout:
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
+                builder.setTitle(getString(R.string.app_name));
+                builder.setMessage("Designed and develop with love by Meisam ay meiCode.org\n" +
+                        "Check my website for more awesome applications");
+                builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                builder.setPositiveButton("Visit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(ProfileActivity.this, WebsiteActivity.class);
+                        intent.putExtra("url","https://google.com/");
+                        startActivity(intent);
+                    }
+                });
+                builder.create().show();
+                break;
         }
     }
 }

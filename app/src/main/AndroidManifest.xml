@@ -11,12 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PracticeApplication">
-        <activity android:name=".FavoriteBook"></activity>
-        <activity android:name=".CurrentReadBook" />
-        <activity android:name=".WantToReadActivity" />
-        <activity android:name=".AlreadyReadBookActivity" />
+        <activity android:name=".WebsiteActivity"/>
+        <activity android:name=".FavoriteBook"
+            android:label="@string/activity_favorites_books"/>
+        <activity android:name=".CurrentReadBook"
+            android:label="@string/activity_currently_reading" />
+        <activity android:name=".WantToReadActivity"
+            android:label="@string/activity_want_to_books" />
+        <activity android:name=".AlreadyReadBookActivity"
+            android:label="@string/activity_already_read" />
         <activity android:name=".BookActivity" />
-        <activity android:name=".SecondActivity" />
+        <activity android:name=".SecondActivity"
+            android:label="@string/activity_all_books"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".ProfileActivity">
             <intent-filter>

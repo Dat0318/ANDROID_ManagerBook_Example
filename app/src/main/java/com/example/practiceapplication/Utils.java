@@ -1,12 +1,14 @@
 package com.example.practiceapplication;
 
-import android.util.Log;
+import android.content.Context;
+import android.content.SharedPreferences;
 
 import java.util.ArrayList;
 
 public class Utils {
 
     private static Utils instance;
+    private SharedPreferences sharedPreferences;
 
     private static ArrayList<Book> allBooks;
     private static ArrayList<Book> alreadyReadBooks;
@@ -15,7 +17,10 @@ public class Utils {
     private static ArrayList<Book> favoritesBooks;
     private static final String TAG = "Utils";
 
-    private Utils() {
+    private Utils(Context context) {
+
+        sharedPreferences = context.getSharedPreferences("alternate_db", Context.MODE_PRIVATE)
+
         if (allBooks == null) {
             allBooks = new ArrayList<>();
             initData();
@@ -111,13 +116,29 @@ public class Utils {
     public boolean addToAlreadyRead(Book book) {
         return alreadyReadBooks.add(book);
     }
+
     public boolean addToWantToRead(Book book) {
         return wantToReadBooks.add(book);
     }
+
     public boolean addToCurrentRead(Book book) {
         return currentlyReadingBooks.add(book);
     }
+
     public boolean addToFavoriteBook(Book book) {
         return favoritesBooks.add(book);
+    }
+
+    public boolean removeAlreadyRead(Book book) {
+        return alreadyReadBooks.remove(book);
+    }
+    public boolean removeWantToRead(Book book) {
+        return wantToReadBooks.remove(book);
+    }
+    public boolean removeCurrentRead(Book book) {
+        return currentlyReadingBooks.remove(book);
+    }
+    public boolean removeFavoriteBook(Book book) {
+        return favoritesBooks.remove(book);
     }
 }

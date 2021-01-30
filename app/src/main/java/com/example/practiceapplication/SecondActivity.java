@@ -2,7 +2,9 @@ package com.example.practiceapplication;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -21,7 +23,10 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        adapter = new BookRecViewAdapter(this);
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        adapter = new BookRecViewAdapter(this,"allBooks");
         booksRecView = findViewById(R.id.booksRecView);
 
         booksRecView.setAdapter(adapter);
@@ -37,5 +42,23 @@ public class SecondActivity extends AppCompatActivity {
 //        adapter.setBooks(books);
 
         adapter.setBooks(Utils.getInstance().getAllBooks());
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_out, R.anim.slide_in);
     }
 }

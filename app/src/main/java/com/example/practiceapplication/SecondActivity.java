@@ -41,7 +41,7 @@ public class SecondActivity extends AppCompatActivity {
 //
 //        adapter.setBooks(books);
 
-        adapter.setBooks(Utils.getInstance().getAllBooks());
+        adapter.setBooks(Utils.getInstance(this).getAllBooks());
     }
 
     @Override

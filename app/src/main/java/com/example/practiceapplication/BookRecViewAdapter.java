@@ -92,7 +92,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                if (Utils.getInstance().removeAlreadyRead(books.get(position))) {
+                                if (Utils.getInstance(mContent).removeAlreadyRead(books.get(position))) {
                                     Toast.makeText(mContent, "books remove.", Toast.LENGTH_SHORT).show();
                                     notifyDataSetChanged();
                                 }
@@ -113,7 +113,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                 holder.btnDelete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (Utils.getInstance().removeCurrentRead(books.get(position))) {
+                        if (Utils.getInstance(mContent).removeCurrentRead(books.get(position))) {
                             Toast.makeText(mContent, "books remove.", Toast.LENGTH_SHORT).show();
                             notifyDataSetChanged();
                         } else {
@@ -126,7 +126,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                 holder.btnDelete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (Utils.getInstance().removeFavoriteBook(books.get(position))) {
+                        if (Utils.getInstance(mContent).removeFavoriteBook(books.get(position))) {
                             Toast.makeText(mContent, "books remove.", Toast.LENGTH_SHORT).show();
                             notifyDataSetChanged();
                         } else {
@@ -139,7 +139,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                 holder.btnDelete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (Utils.getInstance().removeWantToRead(books.get(position))) {
+                        if (Utils.getInstance(mContent).removeWantToRead(books.get(position))) {
                             Toast.makeText(mContent, "books remove.", Toast.LENGTH_SHORT).show();
                             notifyDataSetChanged();
                         } else {
